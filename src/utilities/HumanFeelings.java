@@ -1,6 +1,6 @@
 package utilities;
 
-public enum Feelings {
+public enum HumanFeelings {
     HAPPY("радостным"),
     SAD("грусным"),
     SLEEPY("сонным"),
@@ -8,7 +8,7 @@ public enum Feelings {
     STRESSFUL("беспокойно");
     private final String feelingExplanation;
 
-    Feelings(String feelingExplanation) {
+    HumanFeelings(String feelingExplanation) {
         this.feelingExplanation = feelingExplanation;
     }
 

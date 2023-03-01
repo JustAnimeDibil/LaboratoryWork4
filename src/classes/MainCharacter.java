@@ -13,7 +13,7 @@ public class MainCharacter extends AbstractClass implements HeroInterface {
 
     public void eatWithWhat(String food) {
         System.out.println(getName() + " ест свою еду с " + food);
-        isFeeling(Feelings.SLEEPY);
+        isFeeling(HumanFeelings.SLEEPY);
     }
 
     public void isLayOnCouchAndDream(MainCharacter character, CaravanPart caravan) {
@@ -21,9 +21,15 @@ public class MainCharacter extends AbstractClass implements HeroInterface {
         caravan.doDream(character);
     }
 
-    public void isWokeUp(MainCharacter character) {
-        System.out.println(character.getName() + " очнулся ");
-        isFeeling(Feelings.STRESSFUL);
+    /* Проверяемое исключение (checked) */
+    public void isWokeUp() throws HappyWokeUpFailException {
+        final double WIN_NUMBERS = 0.9;
+        if (Math.random() > WIN_NUMBERS) {
+            System.out.println(getName() + " с легкостью проснулся");
+            isFeeling(HumanFeelings.HAPPY);
+        } else {
+            throw new HappyWokeUpFailException(getName() + " еле очнулся");
+        }
     }
 
     public void doPreparation(MainCharacter character, PreparationPart preparation) {
@@ -37,7 +43,7 @@ public class MainCharacter extends AbstractClass implements HeroInterface {
     }
 
     @Override
-    public void isFeeling(Feelings feeling) {
+    public void isFeeling(HumanFeelings feeling) {
         System.out.println(getName() + " чувствует себя " + feeling.getFeelingExplanation());
     }
 

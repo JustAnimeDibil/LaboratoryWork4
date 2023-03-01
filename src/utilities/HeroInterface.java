@@ -2,7 +2,7 @@ package utilities;
 import classes.*;
 
 public interface HeroInterface {
-    void isFeeling(Feelings feeling);
+    void isFeeling(HumanFeelings feeling);
 
     void showEndResult(PreparationPart prepare, CreatingTrapPart trap);
 }

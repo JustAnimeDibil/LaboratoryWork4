@@ -22,7 +22,7 @@ public class CaravanPart extends AbstractClass {
         whereIsThey(character, "Африка", "Египет", "оазис");
         whatTheyDoing(character, "отдыхают");
         whatHeDoing(character, "пьет из ручья ");
-        character.isFeeling(Feelings.WONDERFUL);
+        character.isFeeling(HumanFeelings.WONDERFUL);
     }
 
 

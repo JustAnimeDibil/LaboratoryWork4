@@ -11,7 +11,15 @@ public class Main {
         CaravanPart caravan = new CaravanPart("караван", "верблюды");
         roskolnikov.isLayOnCouchAndDream(roskolnikov, caravan);
         Clock clock = new Clock("Часы");
-        clock.isStriking(roskolnikov, Time.SIX_PM);
+        clock.isStriking(roskolnikov, Clock.Time.SIX_PM);
+        /* Анонимный класс */
+        JumpInterface doJump = new JumpInterface() {
+            @Override
+            public void jumpedUp(MainCharacter character) {
+                System.out.println(character.getName() + " вскочил");
+            }
+        };
+        doJump.jumpedUp(roskolnikov);
         ArrayList<String> items = new ArrayList<>();
         items.add("рубашка");
         items.add("игла");
